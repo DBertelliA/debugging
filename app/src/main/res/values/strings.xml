@@ -13,5 +13,9 @@
     <!--Esto debemos escribirlo a mano-->
     <string name="mensaje_tostador_phone"> Debes de hacer algo…</string>
     <string name="phone_string">phone</string>
-    <string name="numero">numero</string>
+    <string name="numero">numero al que llamar</string>
+    <string name="onrestart">OnRestart</string>
+    <string name="ondestroy">OnDestroy</string>
+    <string name="onstop">OnStop</string>
+    <string name="onpause">OnPause</string>
 </resources>

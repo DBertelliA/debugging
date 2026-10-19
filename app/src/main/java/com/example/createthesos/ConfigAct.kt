@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.createthesos.databinding.ActivityConfiguradoBinding
@@ -32,7 +33,6 @@ class ConfigAct : AppCompatActivity(){
         //**Esto es un setContent, equivalente a la contruccion del entorno + la añadicion de la referencia con los botones**\\
 
         initSearchForSavedSharedPreferences()
-        start()
     }
 
     //Nuestra intencion en principio es crear una apluicacion que almacene el numero de telefono que
@@ -48,7 +48,14 @@ class ConfigAct : AppCompatActivity(){
         this.shareF = getSharedPreferences(nameSharedFichero, Context.MODE_PRIVATE) //El private mode provoca que el fichero que se ve a a mirar va a estar solo disponible apra la aplicacion
     }
 
-    private fun start(){
+    override fun onStart(){
+        super.onStart()
+        val claseObjetoA : ClaseA = ClaseA("testeo","apellidoTesteo",69)
+
+        Log.d("---Salida clase---", "$claseObjetoA Inicio de programa")
+
+        Toast.makeText(this, claseObjetoA.toString(), Toast.LENGTH_LONG).show()
+
         var sharedPhone : String? = shareF.getString(telephoneShared,null)
 
         sharedPhone?.let{
